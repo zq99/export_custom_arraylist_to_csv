@@ -1,51 +1,32 @@
 package com.company.test;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Person {
 
     /* this is just a dummy class to test the export process
      */
 
-    private String name;
-    private double age;
-    private Date birthday;
+    private final String name;
+    private final double age;
 
     public Person(String name, double age) {
         this.name = name;
         this.age = age;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public double getAge() {
         return age;
     }
 
-    public void setAge(double age) {
-        this.age = age;
-    }
-
-    public Date getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
+    public String getName() {
+        return name;
     }
 
     @Override
     public String toString(){
-        return this.name + ", " + this.age + ", " + this.birthday;
+        return this.name + ", " + this.age;
     }
-
 
     public static ArrayList<Person> getPeople(){
         Person person1 = new Person("Elon",50);
