@@ -1,6 +1,6 @@
 # Export Custom Java List to CSV
 
-A utility class that exports any java list with custom objects to a csv file.
+A utility class that exports the data in any java list with custom objects to a csv file.
 
 ## Example
 
