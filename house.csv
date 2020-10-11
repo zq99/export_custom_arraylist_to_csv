@@ -1,0 +1,4 @@
+_id,countryCode,district,doorNumbers,streetName,zipPostCode,
+0,us,dist1,12,Street A,zip1,
+1,us,dist2,13,Street B,zip2,
+2,us,dist1,14,Street C,zip3,
