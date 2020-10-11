@@ -105,18 +105,11 @@ public class ListExporter {
         return escapedData;
     }
 
-    public static void Export(List<?> arrData,String filename){
-        try {
-            ListExporter listExporter = new ListExporter(arrData,filename);
-            listExporter.setHeadersRequired(true);
-            listExporter.setIndexRequired(true);
-            listExporter.output();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+    public static void export(List<?> arrData,String filename){
+        ListExporter.export(arrData,filename,true,true);
     }
 
-    public static void Export(List<?> arrData,String filename,boolean addHeaders, boolean addIndex){
+    public static void export(List<?> arrData,String filename,boolean addHeaders, boolean addIndex){
         try {
             ListExporter listExporter = new ListExporter(arrData,filename);
             listExporter.setHeadersRequired(addHeaders);

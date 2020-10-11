@@ -15,8 +15,8 @@ public class Main {
         ArrayList<Person> people = Person.getPeople();
         ArrayList<House> houses = House.getHouses();
 
-        ListExporter.Export(people,"people.csv");
-        ListExporter.Export(houses,"house.csv");
+        ListExporter.export(people,"people.csv");
+        ListExporter.export(houses,"house.csv");
 
 
     }
