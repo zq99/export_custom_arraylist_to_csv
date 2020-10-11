@@ -1,7 +1,5 @@
 package com.company;
 
-import com.company.test.Person;
-
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;
 import java.beans.Introspector;
@@ -10,20 +8,20 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
+import java.util.List;
 
-public class ExportCustomList {
+public class ListExporter {
 
     /* this class is for exporting any ArrayList
      * with custom objects into a csv file
      */
 
-    private final ArrayList<?> arrData;
+    private final List<?> arrData;
     private final String fileName;
     private boolean indexRequired=false;
     private boolean headersRequired=true;
 
-    public ExportCustomList(ArrayList<?> arrData,String fileName) {
+    public ListExporter(List<?> arrData, String fileName) {
         this.arrData = arrData;
         this.fileName = fileName;
     }
@@ -59,7 +57,7 @@ public class ExportCustomList {
     private RowData getRowData(Object object) throws IntrospectionException, InvocationTargetException, IllegalAccessException {
         StringBuilder sbValues = new StringBuilder();
         StringBuilder sbHeaders = new StringBuilder();
-        BeanInfo beanInfo = Introspector.getBeanInfo(Person.class);
+        BeanInfo beanInfo = Introspector.getBeanInfo(object.getClass());
         for (PropertyDescriptor propertyDesc : beanInfo.getPropertyDescriptors()) {
             String propertyName = propertyDesc.getName();
             if(!propertyName.equals("class")) {
@@ -106,4 +104,28 @@ public class ExportCustomList {
         }
         return escapedData;
     }
+
+    public static void Export(List<?> arrData,String filename){
+        try {
+            ListExporter listExporter = new ListExporter(arrData,filename);
+            listExporter.setHeadersRequired(true);
+            listExporter.setIndexRequired(true);
+            listExporter.output();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void Export(List<?> arrData,String filename,boolean addHeaders, boolean addIndex){
+        try {
+            ListExporter listExporter = new ListExporter(arrData,filename);
+            listExporter.setHeadersRequired(addHeaders);
+            listExporter.setIndexRequired(addIndex);
+            listExporter.output();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
