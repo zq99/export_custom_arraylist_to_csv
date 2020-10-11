@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ExportCustomArrayListToCsv.iml" filepath="$PROJECT_DIR$/ExportCustomArrayListToCsv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ListExporter.iml" filepath="$PROJECT_DIR$/ListExporter.iml" />
     </modules>
   </component>
 </project>
