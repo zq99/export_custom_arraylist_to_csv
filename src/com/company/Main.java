@@ -11,10 +11,11 @@ public class Main {
 
         // this demonstrates how to use ListExporter class
 
-        // create an arraylist with custom object
+        // create an arraylist with custom objects
         ArrayList<Person> people = Person.getPeople();
         ArrayList<House> houses = House.getHouses();
 
+        //export the data from each list to a csv file
         ListExporter.export(people,"people.csv");
         ListExporter.export(houses,"house.csv");
 
