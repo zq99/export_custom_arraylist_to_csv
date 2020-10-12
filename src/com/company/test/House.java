@@ -3,6 +3,9 @@ package com.company.test;
 import java.util.ArrayList;
 
 public class House {
+
+    /* this is just a test class to test the export process */
+
     private final int doorNumbers;
     private final String streetName;
     private final String zipPostCode;

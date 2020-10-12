@@ -4,8 +4,7 @@ import java.util.ArrayList;
 
 public class Person {
 
-    /* this is just a dummy class to test the export process
-     */
+    /* this is just a test class to test the export process */
 
     private final String name;
     private final double age;
